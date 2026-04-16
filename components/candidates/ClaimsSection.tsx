@@ -115,7 +115,7 @@ export function ClaimsSection({ title, claims }: ClaimsSectionProps) {
             {expanded ? '↑' : '↓'}
           </span>
         </button>
-      )}
+      )}    
     </section>
   )
 }
