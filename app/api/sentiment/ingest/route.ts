@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { refreshSentimentData } from '@/lib/sentiment-aggregator'
 import { createClient } from '@supabase/supabase-js'
-
+import { ingestSimulatedPosts } from '@/lib/sentiment/ingest'
 export async function POST(req: Request) {
   const auth = req.headers.get('x-admin-secret')
   if (auth !== process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(-12)) {
