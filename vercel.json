@@ -10,8 +10,9 @@
       ]
     }
   ],
+{
   "crons": [
     { "path": "/api/sentiment/refresh", "schedule": "0 6 * * *" },
-    { "path": "/api/news/fetch",        "schedule": "0 */6 * * *" }
+    { "path": "/api/news/fetch",        "schedule": "0 7 * * *" }
   ]
 }
