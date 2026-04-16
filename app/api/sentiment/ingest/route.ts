@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { ingestSimulatedPosts, aggregateDaily } from '@/lib/sentiment-aggregator'
+import { refreshSentimentData } from '@/lib/sentiment-aggregator'
 import { createClient } from '@supabase/supabase-js'
 
 export async function POST(req: Request) {
