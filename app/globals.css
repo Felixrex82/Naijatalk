@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: #0a0a0f;
+    --bg-surface: #111118;
+    --bg-elevated: #1a1a24;
+    --border: #2a2a38;
+    --border-bright: #3a3a52;
+    --text-primary: #f0f0f8;
+    --text-secondary: #8888aa;
+    --text-muted: #55556a;
+    --accent-green: #22d3a5;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-blue: #3b82f6;
+    --nigeria-green: #008751;
+    --nigeria-white: #f0f0f8;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+  }
+
+  ::selection {
+    background: rgba(34, 211, 165, 0.25);
+    color: #f0f0f8;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-bright);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply bg-[#111118] border border-[#2a2a38] rounded-xl;
+  }
+
+  .surface-elevated {
+    @apply bg-[#1a1a24] border border-[#3a3a52] rounded-xl;
+  }
+
+  .btn-primary {
+    @apply bg-[#22d3a5] text-[#0a0a0f] font-semibold px-5 py-2.5 rounded-lg
+           hover:bg-[#1db890] transition-all duration-200 text-sm
+           focus:outline-none focus:ring-2 focus:ring-[#22d3a5]/50;
+  }
+
+  .btn-ghost {
+    @apply border border-[#2a2a38] text-[#8888aa] px-5 py-2.5 rounded-lg
+           hover:border-[#3a3a52] hover:text-white transition-all duration-200 text-sm
+           focus:outline-none focus:ring-2 focus:ring-white/10;
+  }
+
+  .label-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .score-bar {
+    @apply h-1.5 rounded-full transition-all duration-700;
+  }
+
+  .section-heading {
+    @apply text-xs font-semibold tracking-[0.12em] uppercase text-[#55556a];
+  }
+
+  .candidate-card {
+    @apply surface p-6 hover:border-[#3a3a52] transition-all duration-300 cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#22d3a5] to-[#3b82f6] bg-clip-text text-transparent;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      #1a1a24 0%,
+      #2a2a38 50%,
+      #1a1a24 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
